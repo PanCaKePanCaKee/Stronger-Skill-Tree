@@ -1,0 +1,10 @@
+modLoader="lowcodefml"
+loaderVersion="[40,)"
+license="MIT"
+
+[[mods]]
+modId="stronger_skill_tree"
+version="1.4.0"
+displayName="Stronger Skill Tree"
+description="made by PanCaKe_0_0_0"
+authors="PanCaKe_0_0_0"

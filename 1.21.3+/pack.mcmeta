@@ -1,0 +1,12 @@
+{
+	"pack": {
+		"pack_format": 8,
+		"supported_formats": [
+			0,
+			117
+		],
+		"description": "made by PanCaKe_0_0_0",
+		"min_format": 0,
+		"max_format": 117
+	}
+}
