@@ -1,0 +1,208 @@
+{
+  "experience_per_level": {
+    "type": "expression",
+    "data": {
+      "expression": "(10 + max(0, level - 10) + max(0, level - 50) + 2*max(0, level - 54) - (47/33)*max(0, level - 66)) * 10"
+    }
+  },
+  "sources": [
+    {
+      "type": "puffish_skills:mine_block",
+      "data": {
+        "variables": {
+          "silk_touch": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"minecraft:silk_touch\"}]}"
+                }
+              }
+            ]
+          },
+          "exp1": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:mining_experience\",lvl:1s}]}"
+                }
+              }
+            ]
+          },
+          "exp2": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:mining_experience\",lvl:2s}]}"
+                }
+              }
+            ]
+          },
+          "exp3": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:mining_experience\",lvl:3s}]}"
+                }
+              }
+            ]
+          },
+          "exp4": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:mining_experience\",lvl:4s}]}"
+                }
+              }
+            ]
+          },
+          "exp5": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:mining_experience\",lvl:5s}]}"
+                }
+              }
+            ]
+          },
+          "ores_in_ground_deepslate": {
+            "operations": [
+              {
+                "type": "get_mined_block_state"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "block": "#stronger_skill_tree:ores_in_ground/deepslate"
+                }
+              }
+            ]
+          },
+          "ores_in_ground_netherrack": {
+            "operations": [
+              {
+                "type": "get_mined_block_state"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "block": "#stronger_skill_tree:ores_in_ground/netherrack"
+                }
+              }
+            ]
+          },
+          "ores_in_ground_stone": {
+            "operations": [
+              {
+                "type": "get_mined_block_state"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "block": "#stronger_skill_tree:ores_in_ground/stone"
+                }
+              }
+            ]
+          }
+        },
+        "experience": [
+          {
+            "condition": "!silk_touch & ores_in_ground_netherrack & !exp1 & !exp2 & !exp3 & !exp4 & !exp5",
+            "expression": "10"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_stone & !exp1 & !exp2 & !exp3 & !exp4 & !exp5",
+            "expression": "20"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_deepslate & !exp1 & !exp2 & !exp3 & !exp4 & !exp5",
+            "expression": "30"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_netherrack & exp1",
+            "expression": "11"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_netherrack & exp2",
+            "expression": "12"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_netherrack & exp3",
+            "expression": "13"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_netherrack & exp4",
+            "expression": "14"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_netherrack & exp5",
+            "expression": "15"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_stone & exp1",
+            "expression": "22"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_stone & exp2",
+            "expression": "24"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_stone & exp3",
+            "expression": "26"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_stone & exp4",
+            "expression": "28"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_stone & exp5",
+            "expression": "30"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_deepslate & exp1",
+            "expression": "33"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_deepslate & exp2",
+            "expression": "36"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_deepslate & exp3",
+            "expression": "39"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_deepslate & exp4",
+            "expression": "42"
+          },
+          {
+            "condition": "!silk_touch & ores_in_ground_deepslate & exp5",
+            "expression": "45"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+	"experience_per_level": {
+		"type": "expression",
+		"data": {
+			"expression": "(20+max(0,level-135)+max(0,level-211)+6*max(0,level-233)-max(0,level-234))*10"
+		}
+	},
+	"sources": [
+		{
+			"type": "puffish_skills:kill_entity",
+			"data": {
+				"variables": {
+					"dropped_xp": {
+						"operations": [
+							{
+								"type": "get_dropped_experience"
+							}
+						]
+					},
+					"exp1": {
+						"operations": [
+							{
+								"type": "get_weapon_item_stack"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"nbt": "{Enchantments:[{id:\"stronger_skill_tree:combat_experience\",lvl:1s}]}"
+								}
+							}
+						]
+					},
+					"exp2": {
+						"operations": [
+							{
+								"type": "get_weapon_item_stack"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"nbt": "{Enchantments:[{id:\"stronger_skill_tree:combat_experience\",lvl:2s}]}"
+								}
+							}
+						]
+					},
+					"exp3": {
+						"operations": [
+							{
+								"type": "get_weapon_item_stack"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"nbt": "{Enchantments:[{id:\"stronger_skill_tree:combat_experience\",lvl:3s}]}"
+								}
+							}
+						]
+					},
+					"exp4": {
+						"operations": [
+							{
+								"type": "get_weapon_item_stack"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"nbt": "{Enchantments:[{id:\"stronger_skill_tree:combat_experience\",lvl:4s}]}"
+								}
+							}
+						]
+					},
+					"exp5": {
+						"operations": [
+							{
+								"type": "get_weapon_item_stack"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"nbt": "{Enchantments:[{id:\"stronger_skill_tree:combat_experience\",lvl:5s}]}"
+								}
+							}
+						]
+					}
+				},
+				"experience": [
+					{
+						"condition": "!exp1 & !exp2 & !exp3 & !exp4 & !exp5",
+						"expression": "dropped_xp*10"
+					},
+					{
+						"condition": "exp1",
+						"expression": "dropped_xp*11"
+					},
+					{
+						"condition": "exp2",
+						"expression": "dropped_xp*12"
+					},
+					{
+						"condition": "exp3",
+						"expression": "dropped_xp*13"
+					},
+					{
+						"condition": "exp4",
+						"expression": "dropped_xp*14"
+					},
+					{
+						"condition": "exp5",
+						"expression": "dropped_xp*15"
+					}
+				],
+				"anti_farming": {
+					"limit_per_chunk": 25,
+					"reset_after_seconds": 300
+				}
+			}
+		}
+	]
+}

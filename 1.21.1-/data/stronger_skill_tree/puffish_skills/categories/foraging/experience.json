@@ -1,0 +1,121 @@
+{
+  "experience_per_level": {
+    "type": "expression",
+    "data": {
+      "expression": "(20 + 6*max(0, level - 37) + 5*max(0, level - 45)) * 10"
+    }
+  },
+  "sources": [
+    {
+      "type": "puffish_skills:mine_block",
+      "data": {
+        "variables": {
+          "is_logs": {
+            "operations": [
+              {
+                "type": "get_mined_block_state"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "block": "#logs"
+                }
+              }
+            ]
+          },
+          "exp1": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:foraging_experience\",lvl:1s}]}"
+                }
+              }
+            ]
+          },
+          "exp2": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:foraging_experience\",lvl:2s}]}"
+                }
+              }
+            ]
+          },
+          "exp3": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:foraging_experience\",lvl:3s}]}"
+                }
+              }
+            ]
+          },
+          "exp4": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:foraging_experience\",lvl:4s}]}"
+                }
+              }
+            ]
+          },
+          "exp5": {
+            "operations": [
+              {
+                "type": "get_tool_item_stack"
+              },
+              {
+                "type": "puffish_skills:test",
+                "data": {
+                  "nbt": "{Enchantments:[{id:\"stronger_skill_tree:foraging_experience\",lvl:5s}]}"
+                }
+              }
+            ]
+          }
+        },
+        "experience": [
+          {
+            "condition": "is_logs & !exp1 & !exp2 & !exp3 & !exp4 & !exp5",
+            "expression": "10"
+          },
+          {
+            "condition": "is_logs & exp1",
+            "expression": "11"
+          },
+          {
+            "condition": "is_logs & exp2",
+            "expression": "12"
+          },
+          {
+            "condition": "is_logs & exp3",
+            "expression": "13"
+          },
+          {
+            "condition": "is_logs & exp4",
+            "expression": "14"
+          },
+          {
+            "condition": "is_logs & exp5",
+            "expression": "15"
+          }
+        ]
+      }
+    }
+  ]
+}
