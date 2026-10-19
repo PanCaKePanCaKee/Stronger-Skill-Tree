@@ -1,3 +1,6 @@
+# Stronger Skill Tree
+
+
 This is a skill tree for the mod [Pufferfish's skills](https://modrinth.com/mod/skills), It also needs [pufferfish's attributes](https://modrinth.com/mod/attributes).
 
 It has 3 trees (Combat, Mining, Chopping wood) with Combat being the most intresting.
